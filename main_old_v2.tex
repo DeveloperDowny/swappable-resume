@@ -1,0 +1,172 @@
+%-------------------------
+% Resume in Latex
+% Author : Sourabh Bajaj
+% Website: https://github.com/sb2nov/resume
+% License : MIT
+%------------------------
+
+% \documentclass[letterpaper,11pt]{article}
+\documentclass[letterpaper,10pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[pdftex]{hyperref}
+\usepackage{fancyhdr}
+\usepackage{fontawesome}
+
+\usepackage{xstring}
+\usepackage{etoolbox}
+
+% \documentclass[width=10mm]{enspace}
+
+\renewcommand{\enspace}{\hspace{0.5em}}
+
+
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+% \addtolength{\oddsidemargin}{-0.375in}
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.375in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[2]{
+  \item\small{
+    \textbf{#1}{: #2 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[5]{
+  \vspace{-1pt}\item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textbf{#1} #5 & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-5pt}
+}
+
+\newcommand{\resumeSubheadings}[5]{
+  \vspace{-1pt}\item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textbf{#1} #5 & \textit{#2}
+    \end{tabular*}\vspace{-5pt}
+}
+
+\newcommand{\achieveSubheading}[1]{
+ \item \textbf{#1}  
+}
+
+\newcommand{\resumeSubItem}[2]{\resumeItem{#1}{#2}\vspace{-4pt}}
+
+\renewcommand{\labelitemii}{$\circ$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=*]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+% \newcommand{\resumeItemListStarts}{\begin{itemize}[itemsep=2pt,parsep=0pt,topsep=2pt,partopsep=0pt,label=$\circ$]}
+% \newcommand{\resumeItemListEnds}{\end{itemize}}
+
+\setlength{\tabcolsep}{12pt}
+
+% \newcolumntype{C}{@{\hspace{1em}}c@{\hspace{1em}}}
+
+\newcommand{\customFormat}[2]{\textbf{#1:} #2}
+
+\newcommand{\achievement}[2]{
+    \subsection*{#1}
+    #2
+}
+\newcommand{\githublink}[1]{\href{#1}{\faGithub}}
+\newcommand{\websitelink}[1]{\href{#1}{\faGlobe}}
+
+\usepackage{tfrupee}
+\usepackage[T1]{fontenc}
+
+\newcommand{\resumeType}{sde} % Options: fs, back, front, sde, fs_front
+
+%-------------------------------------------
+%%%%%%  CV STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+\begin{center}
+     \huge \textsc{Vedant Panchal}
+\end{center}
+
+\begin{center}
+\begin{tabular}{ c c c c } 
+ \href{https://linkedin.com/in/vedantpanchal}{\faLinkedin\enspace{vedantpanchal}} & \faEnvelopeO\enspace \href{mailto:vedant.panchal@spit.ac.in}{vedant.panchal@spit.ac.in} &  \href{https://github.com/DeveloperDowny}{\faGithub\enspace{DeveloperDowny}} &  \faGlobe\enspace \href{https://developerdowny.github.io/}{DeveloperDowny.github.io}
+\end{tabular}
+\end{center}
+
+\input{sections/education}
+% \input{sections/skills}
+% \input{sections/skills_sde}
+% \input{sections/skills_back}
+% \input{sections/skills_fs}
+% \input{sections/skills_low_level}
+
+% Skills section
+\IfStrEqCase{\resumeType}{%
+    {fs}{\input{sections/skills_fs}}%
+    {back}{\input{sections/skills_back}}%
+    {front}{\input{sections/skills_front}}%
+    {sde}{\input{sections/skills_sde}}%
+}[\input{sections/skills_sde}] % Default case
+
+% \input{sections/skills_low_level}
+
+% \input{sections/experience}
+% \input{sections/exp_back}
+% \input{sections/exp_full_stack}
+
+% Experience section
+\IfStrEqCase{\resumeType}{%
+    {fs}{\input{sections/exp_full_stack}}%
+    {back}{\input{sections/exp_back}}%
+    {front}{\input{sections/exp_front}}%
+    {sde}{\input{sections/exp_sde}}%
+}[\input{sections/experience}] % Default case
+
+
+% \input{sections/projects}
+% \input{sections/projects_back}
+% \input{sections/projects_fs}
+
+% Projects section
+\IfStrEqCase{\resumeType}{%
+    {fs}{\input{sections/projects_fs}}%
+    {back}{\input{sections/projects_back}}%
+    {front}{\input{sections/projects_front}}%
+    {sde}{\input{sections/projects_sde}}%
+}[\input{sections/projects}] % Default case
+
+
+\input{sections/achievements_short}
+% \input{sections/por}
+
+\end{document}

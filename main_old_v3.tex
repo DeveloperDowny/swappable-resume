@@ -1,0 +1,175 @@
+
+\documentclass[letterpaper,10pt]{article}
+
+\usepackage{latexsym} 
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[pdftex]{hyperref}
+\usepackage{fancyhdr}
+\usepackage{fontawesome}
+
+\usepackage{xstring}
+\usepackage{etoolbox}
+
+
+\renewcommand{\enspace}{\hspace{0.5em}}
+
+
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.375in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+\newcommand{\resumeItem}[2]{
+  \item\small{
+    \textbf{#1}{: #2 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[5]{
+  \vspace{-1pt}\item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textbf{#1} #5 & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-5pt}
+}
+
+\newcommand{\resumeSubheadings}[5]{
+  \vspace{-1pt}\item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textbf{#1} #5 & \textit{#2}
+    \end{tabular*}\vspace{-5pt}
+}
+
+\newcommand{\achieveSubheading}[1]{
+ \item \textbf{#1}  
+}
+
+\newcommand{\resumeSubItem}[2]{\resumeItem{#1}{#2}\vspace{-4pt}}
+
+\renewcommand{\labelitemii}{$\circ$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=*]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+
+\setlength{\tabcolsep}{12pt}
+
+
+\newcommand{\customFormat}[2]{\textbf{#1:} #2}
+
+\newcommand{\achievement}[2]{
+    \subsection*{#1}
+    #2
+}
+\newcommand{\githublink}[1]{\href{#1}{\faGithub}}
+\newcommand{\websitelink}[1]{\href{#1}{\faGlobe}}
+
+\usepackage{tfrupee}
+\usepackage[T1]{fontenc}
+
+\newcommand{\resumeType}{hox_work} % Options: fs, back, front, sde, fs_front, hox
+
+\begin{document}
+
+\begin{center}
+     \huge \textsc{Vedant Panchal}
+\end{center}
+
+\begin{center}
+\begin{tabular}{ c c c c } 
+ \href{https://linkedin.com/in/vedantpanchal}{\faLinkedin\enspace{vedantpanchal}} & \faEnvelopeO\enspace \href{mailto:vedant.panchal@spit.ac.in}{vedant.panchal@spit.ac.in} &  \href{https://github.com/DeveloperDowny}{\faGithub\enspace{DeveloperDowny}} &  \faGlobe\enspace \href{https://fueler.io/vedantpanchal/portfolio/0a254578-c29a-4672-b96a-58f220488bdc}{fueler.io/vedantpanchal}
+\end{tabular}
+\end{center}
+
+% {\faGithub\enspace{DeveloperDowny}} &  \faGlobe\enspace \href{https://developerdowny.github.io/}{DeveloperDowny.github.io}
+
+\input{sections/education}
+
+\IfStrEqCase{\resumeType}{%
+    {hox}{
+        \input{sections/skills_fs}
+        \input{sections/hox/exp}
+        \input{sections/hox/pro}
+    }
+    {hox_work}{
+        \input{sections/skills_nom}
+        % \input{sections/skills_fs}
+        % \input{sections/skills_sde}
+        \input{sections/hox/exp}
+        \input{sections/hox/pro}
+    }
+    {fs}{
+        \input{sections/skills_fs}
+        \input{sections/exp_full_stack}
+        \input{sections/projects_fs}
+    }
+    {back}{
+        \input{sections/skills_back}
+        \input{sections/exp_back}
+        \input{sections/projects_back}
+    }
+    {front}{
+        \input{sections/skills_front}
+        \input{sections/exp_front}
+        \input{sections/projects_front}
+    }
+    {sde}{
+        \input{sections/skills_sde}
+        \input{sections/exp_sde}
+        \input{sections/projects_sde}
+    }
+    {fs_front}{
+        \input{sections/skills_fs}
+        \input{sections/exp_full_stack}
+        \input{sections/projects_fs_front}
+    }
+    {app} {
+        \input{sections/app/skills}
+        \input{sections/app/exp}
+        \input{sections/app/pro}
+    }
+}[
+    \input{sections/skills_sde}
+    \input{sections/experience}
+    \input{sections/projects_fs_front}
+] % Default case
+
+
+
+\input{sections/achievements_short}
+
+% \input{sections/por}
+
+
+% to view all options
+
+% \input{sections/all_options/skills}
+% \input{sections/all_options/exp}
+% \input{sections/all_options/pro}
+
+
+\end{document}
