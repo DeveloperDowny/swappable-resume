@@ -50,7 +50,7 @@ def main() -> None:
     # output_zip = input("Enter the path for the output zip file: ").strip()
 
     source_folder = "latex-code"
-    output_zip = "resume.zip"
+    output_zip = "zipped-code-output/resume.zip"
 
     try:
         zip_folder(source_folder, output_zip)

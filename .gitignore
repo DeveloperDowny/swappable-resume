@@ -1,1 +1,5 @@
 *.zip
+build/
+*.log
+repomix-output.xml
+zipped-code-output
