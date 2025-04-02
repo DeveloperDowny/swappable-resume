@@ -40,7 +40,7 @@
   \vspace{-4pt}\scshape\raggedright\large
 }{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
 
-\newcommand{\resumeType}{nomura} % Options: fs, back, front, sde, fs-front, hox, hox-work, nomura 
+\newcommand{\resumeType}{sde} % Options: fs, back, front, sde, fs-front, hox, hox-work, nomura 
 
 \newcommand{\resumeItem}[2]{
   \item\small{
@@ -107,10 +107,10 @@
 \input{components/common/education}
 
 \IfStrEqCase{\resumeType}{%
-	{nomura}{
-			\input{components/creating-for/sections/skills}
-			\input{components/creating-for/sections/experience}
-			\input{components/creating-for/sections/projects}
+	{sde}{
+			\input{components/sde/sections/skills}
+			\input{components/sde/sections/experience}
+			\input{components/sde/sections/projects}
 		}
 }[
 	\input{components/creating-for/sections/experience}
