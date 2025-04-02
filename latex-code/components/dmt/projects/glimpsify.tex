@@ -1,0 +1,11 @@
+\resumeSubheadings
+{Video2PDF \githublink{https://github.com/DeveloperDowny/most_info_frame_extractor}}
+{May 2024 -- Present}
+{}{}{| \textit{Python, NumPy, pandas, Matplotlib, Tesseract OCR}}
+\resumeItemListStart
+\item Built a tool to identify key frames in educational YouTube videos and generate PDF notes from those frames for easy and quick reference/revision.
+\item The system captures text at regular intervals throughout the video. It analyzes each frame using OCR technology, creating a timeline of extracted text with precise timestamps. By applying multiple analysis strategies to this text timeline, the system identifies the key frames in the video.
+\item Analyzed text timelines using \textbf{NumPy}, \textbf{SciPy} and \textbf{pandas}, then created visualizations with \textbf{Matplotlib}. These tools helped discover patterns and trends that shaped the key frame extraction algorithms.
+\item Used \textbf{Factory Design Pattern} to create a modular and extensible architecture for the key frame extraction process, allowing for easy addition of new analysis strategies in the future.
+\item Used \textbf{Google Cloud Storage} for storing the generated PDFs, \textbf{Google Cloud Run} for deploying a \textbf{Telegram bot} and key frame extraction service, \textbf{Google Pub/Sub} for managing the communication between the bot and the PDF generation, storage and delivery services.
+\resumeItemListEnd

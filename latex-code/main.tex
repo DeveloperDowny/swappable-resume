@@ -1,4 +1,4 @@
-\documentclass[letterpaper,10pt]{article}
+\documentclass[letterpaper,1pt]{article}
 
 \usepackage{latexsym} 
 \usepackage[empty]{fullpage}
@@ -40,7 +40,7 @@
   \vspace{-4pt}\scshape\raggedright\large
 }{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
 
-\newcommand{\resumeType}{sde} % Options: fs, back, front, sde, fs-front, hox, hox-work, nomura 
+\newcommand{\resumeType}{dmt} % Options: fs, back, front, sde, fs-front, hox, hox-work, nomura, dmt
 
 \newcommand{\resumeItem}[2]{
   \item\small{
@@ -104,19 +104,30 @@
 	\end{tabular}
 \end{center}
 
-\input{components/common/education}
 
 \IfStrEqCase{\resumeType}{%
 	{sde}{
 			\input{components/sde/sections/skills}
 			\input{components/sde/sections/experience}
 			\input{components/sde/sections/projects}
+
+			\input{components/common/education}
+			\input{components/common/achievements}
+
+
+		}
+		{dmt}{
+			\input{components/dmt/sections/skills}
+			\input{components/dmt/sections/experience}
+			\input{components/dmt/sections/projects}
+
+			\input{components/common/education}
+			\input{components/common/achievements}
 		}
 }[
 	\input{components/creating-for/sections/experience}
 	\input{components/creating-for/sections/experience}
 ] % Default case
 
-\input{components/common/achievements}
 
 \end{document}
